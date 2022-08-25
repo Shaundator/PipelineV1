@@ -2,8 +2,11 @@ package com.example.pipelinev1;
 
 import com.example.pipelinev1.customer.Customer;
 import com.example.pipelinev1.customer.CustomerRepository;
+import com.example.pipelinev1.planet.PlanetRepository;
+import com.example.pipelinev1.planettype.PlanetTypeRepository;
 import com.example.pipelinev1.reservation.Reservation;
 import com.example.pipelinev1.reservation.ReservationRepository;
+import com.example.pipelinev1.spaceship.SpaceshipRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -25,7 +28,10 @@ public class PipelineV1Application {
     @Bean
     public CommandLineRunner importData(
             CustomerRepository customerRepository,
-            ReservationRepository reservationRepository) {
+            ReservationRepository reservationRepository,
+            PlanetRepository planetRepository,
+            PlanetTypeRepository planetTypeRepository,
+            SpaceshipRepository spaceshipRepository) {
 
         return (args) -> {
             final List<Customer> customers = new ArrayList<>();

@@ -1,6 +1,10 @@
 package com.example.pipelinev1.reservation;
 
+import com.example.pipelinev1.customer.Customer;
+import com.example.pipelinev1.spaceship.Spaceship;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "reservation_table")
@@ -13,6 +17,16 @@ public class Reservation {
 
     @Column(name = "reservation_name")
     private String reservationName;
+
+    @ManyToMany
+    @JoinColumn(name = "customer_id_list_con")
+    private List<Customer> customers;
+
+    @OneToOne
+    @JoinColumn(name = "reservation_spaceship_id_con")
+    private Spaceship spaceship;
+
+
 
     public Reservation() {
 

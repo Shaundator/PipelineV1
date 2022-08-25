@@ -20,7 +20,7 @@ public class Customer {
     private String lastName;
 
     @ManyToOne
-    @JoinColumn(name = "reservation_idFk")
+    @JoinColumn(name = "reservation_id_con")
     private Reservation reservation;
 
     public Customer() {
